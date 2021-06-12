@@ -1,5 +1,5 @@
-import {AppBar,Toolbar,makeStyles,Box,Typography} from '@material-ui/core';
-
+import {AppBar,Toolbar,makeStyles,Box,Typography,withStyles} from '@material-ui/core';
+import Searchbar from './Searchbar';
 const useStyle = makeStyles({
     header: {
         background: '#2874f0',
@@ -27,13 +27,20 @@ const useStyle = makeStyles({
         textDecoration: 'none'
     }
 })
+
+const ToolBar = withStyles({
+    root: {
+      minHeight: 55
+    },
+})(Toolbar);
+
 const Header = () => {
     const classes = useStyle();
     const logo = 'https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/flipkart-plus_8d85f4.png';
     const subURL = 'https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/plus_aef861.png';
     return (
         <AppBar className = {classes.header}>
-            <Toolbar>
+            <ToolBar>
                 <Box className = {classes.component}>
                     <img src = {logo} className = {classes.logo} />
                     <Box component = "span" className = {classes.container}>
@@ -45,7 +52,8 @@ const Header = () => {
                         <img src = {subURL} className = {classes.subURL} />
                     </Box>
                 </Box>
-            </Toolbar>
+                <Searchbar/>
+            </ToolBar>
         </AppBar>
     )
 }
