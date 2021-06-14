@@ -1,5 +1,6 @@
 import {Box,Button,makeStyles,Typography,Badge} from '@material-ui/core';
 import {ShoppingCart} from '@material-ui/icons';
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 const useStyle = makeStyles({
     login: {
         background : 'white',
@@ -20,6 +21,9 @@ const useStyle = makeStyles({
     },
     cart: {
         display: 'flex'
+    },
+    more: {
+        display: 'flex'
     }
 })
 const Headerbuttons = () => {
@@ -27,7 +31,10 @@ const Headerbuttons = () => {
     return (
         <Box className = {classes.wrapper}>
             <Button variant = 'contained' className = {classes.login}>Login</Button>
-            <Typography>More</Typography>
+            <Box className = {classes.more}>
+                <Typography>More</Typography>
+                <KeyboardArrowDownIcon style = {{fontSize: 15,marginTop: 5}} />
+            </Box>
             <Box className = {classes.cart}>
                 <Badge badgeContent={4} color="secondary">
                     <ShoppingCart />
