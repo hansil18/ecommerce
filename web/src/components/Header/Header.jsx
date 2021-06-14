@@ -1,6 +1,7 @@
 import {AppBar,Toolbar,makeStyles,Box,Typography,withStyles} from '@material-ui/core';
 import Searchbar from './Searchbar';
 import Headerbuttons from './Headerbuttons';
+import { Link } from 'react-router-dom';
 const useStyle = makeStyles({
     header: {
         background: '#2874f0',
@@ -41,8 +42,8 @@ const Header = () => {
     const subURL = 'https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/plus_aef861.png';
     return (
         <AppBar className = {classes.header}>
-            <ToolBar>
-                <Box className = {classes.component}>
+            <ToolBar>   
+                <Link to = '/' className = {classes.component}>
                     <img src = {logo} className = {classes.logo} />
                     <Box component = "span" className = {classes.container}>
                         <Typography className = {classes.subHeading}>Explore
@@ -52,7 +53,7 @@ const Header = () => {
                         </Typography>
                         <img src = {subURL} className = {classes.subURL} />
                     </Box>
-                </Box>
+                </Link>
                 <Searchbar/>
                 <Headerbuttons />
             </ToolBar>
