@@ -1,6 +1,5 @@
 import SearchIcon from '@material-ui/icons/Search';
 import { makeStyles, InputBase } from '@material-ui/core';
-
 const useStyle = makeStyles(theme => ({
     search: {
         borderRadius: 2,

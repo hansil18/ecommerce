@@ -1,5 +1,6 @@
 import {AppBar,Toolbar,makeStyles,Box,Typography,withStyles} from '@material-ui/core';
 import Searchbar from './Searchbar';
+import Headerbuttons from './Headerbuttons';
 const useStyle = makeStyles({
     header: {
         background: '#2874f0',
@@ -53,6 +54,7 @@ const Header = () => {
                     </Box>
                 </Box>
                 <Searchbar/>
+                <Headerbuttons />
             </ToolBar>
         </AppBar>
     )
