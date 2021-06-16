@@ -1,5 +1,6 @@
 import Navbar from './Navbar'
 import Banner from './Banner'
+import Slide from './Slide'
 import { Box,makeStyles} from '@material-ui/core';
 const useStyle = makeStyles({
     component:{
@@ -15,6 +16,7 @@ const Home = () => {
             <Box className = {classes.component}>
                 <Banner />
             </Box>
+            <Slide />
         </div>
     )
 }
