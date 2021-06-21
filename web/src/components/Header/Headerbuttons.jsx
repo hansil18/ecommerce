@@ -2,6 +2,10 @@ import {Box,Button,makeStyles,Typography,Badge} from '@material-ui/core';
 import {ShoppingCart} from '@material-ui/icons';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+
+import Logindialogue from './../login/Login'
+
 const useStyle = makeStyles({
     login: {
         background : 'white',
@@ -31,9 +35,14 @@ const useStyle = makeStyles({
 })
 const Headerbuttons = () => {
     const classes = useStyle();
+    const [open,setopen] = useState(false);
+
+    const opendialogue = () => {
+        setopen(true);
+    }
     return (
         <Box className = {classes.wrapper}>
-            <Link><Button variant = 'contained' className = {classes.login}>Login</Button></Link>
+            <Link><Button variant = 'contained' onClick = {() => opendialogue()} className = {classes.login}>Login</Button></Link>
             <Box className = {classes.more}>
                 <Typography>More</Typography>
                 <KeyboardArrowDownIcon style = {{fontSize: 15,marginTop: 5}} />
@@ -44,6 +53,7 @@ const Headerbuttons = () => {
                 </Badge>
                 <Typography style = {{marginLeft: 10}}>Cart</Typography>
             </Link>
+            <Logindialogue open = {open} setopen = {setopen}/>
         </Box>
     )
 }
